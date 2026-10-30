@@ -22,6 +22,8 @@
   .hero p{color:var(--muted);font-size:18px;line-height:1.6;max-width:760px;margin:0 0 12px}
   .btn{display:inline-block;padding:14px 18px;border-radius:12px;border:1.5px solid #b50b13;background:linear-gradient(180deg,#E50914,#C40812);color:#fff;font-weight:800;letter-spacing:.3px;box-shadow:0 6px 18px rgba(229,9,20,.35),inset 0 1px 0 rgba(255,255,255,.15);min-height:44px}
   .btn.secondary{background:transparent;color:var(--ink);border:1.5px solid var(--stroke);box-shadow:none}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .cta .btn-row{justify-content:center}
   section{padding:32px 0}
   h2{font-size:clamp(24px,4vw,34px);margin:0 0 12px}
   .lede{color:var(--muted);font-size:17px;line-height:1.6;max-width:760px;margin:0 0 24px}
@@ -59,7 +61,10 @@
     <div class="hero">
       <h1>Offerings and pricing.</h1>
       <p>Pick the entry point that fits your job. Every engagement starts with a free 30-minute Straight-Talk Call, where we scope the work and confirm the price before anything starts.</p>
-      <a class="btn" href="mailto:neilbeaven1@gmail.com?subject=Straight-Talk%20Call%20request">Book your free Straight-Talk Call</a>
+      <div class="btn-row">
+        <a class="btn" href="https://calendly.com/neilbeaven1/short-intro-video-call-to-discuss-opportunities" target="_blank" rel="noopener">Book a call on Calendly</a>
+        <a class="btn secondary" href="mailto:neilbeaven1@gmail.com?subject=Straight-Talk%20Call%20request">Email to book a call</a>
+      </div>
     </div>
 
     <section>
@@ -165,8 +170,10 @@
     <div class="cta">
       <h2>Start with a free call.</h2>
       <p>30 minutes to understand the work and outline the best next steps. Tell us which entry point you are looking at, and we will take it from there.</p>
-      <a class="btn" href="mailto:neilbeaven1@gmail.com?subject=Straight-Talk%20Call%20request">Book your free Straight-Talk Call</a>
-      <p style="margin-top:16px">Prefer email? Reach us directly at neilbeaven1@gmail.com.</p>
+      <div class="btn-row">
+        <a class="btn" href="https://calendly.com/neilbeaven1/short-intro-video-call-to-discuss-opportunities" target="_blank" rel="noopener">Book a call on Calendly</a>
+        <a class="btn secondary" href="mailto:neilbeaven1@gmail.com?subject=Straight-Talk%20Call%20request">Email to book a call</a>
+      </div>
     </div>
 
     <footer>
