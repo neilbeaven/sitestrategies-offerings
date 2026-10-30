@@ -32,6 +32,8 @@
   .how-card h3{margin:0 0 8px;font-size:19px}
   .how-card p{color:var(--muted);line-height:1.6;margin:0}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .card .btn{margin-top:auto}
+  @media (min-width:1024px){.cards.entry{grid-template-columns:repeat(4,minmax(0,1fr))}}
   .card{background:var(--panel);border:1px solid var(--stroke);border-radius:14px;padding:24px;display:flex;flex-direction:column}
   .card h3{margin:0 0 4px;font-size:21px}
   .best{color:var(--muted);font-style:italic;margin:0 0 14px;line-height:1.5}
@@ -94,7 +96,7 @@
       <h2>Entry points</h2>
       <p class="lede">Four ways in. Each one ends with something you can use.</p>
       <div class="qualifier">All prices and resource levels on this page are starting points. The exact investment from each side, along with scope and timing, is confirmed case by case in the terms and retainer agreement, as defined and agreed before work starts.</div>
-      <div class="cards">
+      <div class="cards entry">
         <div class="card">
           <h3>Site Performance Audit</h3>
           <p class="best">Best when something on site feels off and you want facts before you spend more.</p>
