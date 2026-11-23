@@ -42,13 +42,14 @@
   h3.sub{font-size:20px;margin:24px 0 8px}
   .detail-2col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
   .table-scroll{overflow-x:auto}
-  .how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-  .how-card{background:var(--panel);border:1px solid var(--stroke);border-radius:14px;padding:22px}
+  .how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;counter-reset:step}
+  .how-card{background:transparent;border:none;padding:6px 0 18px}
   .how-card h3{margin:0 0 8px;font-size:19px}
+  .how-card h3::before{counter-increment:step;content:"0" counter(step);display:block;color:var(--brand);font-size:30px;font-weight:900;margin-bottom:8px}
   .how-card p{color:var(--muted);line-height:1.6;margin:0}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
   .card .btn{margin-top:auto}
-  @media (min-width:1024px){.cards.entry{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  @media (min-width:768px){.cards.entry{grid-template-columns:repeat(2,minmax(0,1fr))}}
   .card{background:var(--panel);border:1px solid var(--stroke);border-radius:14px;padding:24px;display:flex;flex-direction:column}
   .card h3{margin:0 0 4px;font-size:21px}
   .best{color:var(--muted);font-style:italic;margin:0 0 14px;line-height:1.5}
@@ -61,6 +62,8 @@
 .flagship{background:var(--panel);border:1px solid var(--brand);border-left:6px solid var(--brand);border-radius:14px;padding:28px}
 .eyebrow{color:var(--brand);font-weight:800;letter-spacing:1.2px;font-size:14px;text-transform:uppercase;margin:0 0 8px}
   .also p{color:var(--muted);line-height:1.65;margin:0}
+  section.band{background:#121212;border:1px solid #232323;border-radius:18px;padding:32px 24px}
+  .cards.soft .card{background:transparent}
   .notes{color:var(--muted);line-height:1.7}
   .notes li{margin-bottom:8px}
   .cta{text-align:center;padding:48px 0 56px}
@@ -79,9 +82,9 @@
     .price-table{display:block;background:transparent;border:none;overflow:visible}
     .price-table tr:first-child{display:none}
     .price-table tbody{display:block}
-    .price-table tr{display:block;background:var(--panel);border:1px solid var(--stroke);border-radius:14px;margin:0 0 16px;padding:6px 0}
-    .price-table tr:last-child{margin-bottom:0}
-    .price-table td{display:block;border-bottom:none;padding:8px 18px}
+    .price-table tr{display:block;background:transparent;border:none;border-bottom:1px solid var(--stroke);border-radius:0;margin:0 0 16px;padding:6px 0}
+    .price-table tr:last-child{border-bottom:none;margin-bottom:0}
+    .price-table td{display:block;border-bottom:none;padding:8px 2px}
     .price-table td::before{content:attr(data-label);display:block;font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
   }
   .cta h2{margin-bottom:12px}
@@ -124,7 +127,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="band">
       <h2>Entry points</h2>
       <p class="lede">Four levels of support, from a focused site audit through project readiness, ongoing advisory, and embedded field leadership. Each engagement has a defined scope and deliverables. Project Readiness has two stages: an independent review, followed by optional implementation.</p>
       <p class="lede">Job under way and something feels off? Start with Level 1. Phase about to start? Start with Level 2. Both apply? Start with Level 1 if the job is losing time now, and Level 2 if a new phase is about to mobilize. The credit below covers the overlap if you move from one to the other. Not sure? The free Straight-Talk Call decides.</p>
@@ -159,7 +162,11 @@
           <p class="best">Best when the next phase is approaching and you want to be ready. Prepare for what is happening next.</p>
           <p class="price">$3,500–$5,000</p>
           <p class="price-note">Stage A Readiness Review, fixed once scope is confirmed. Stage B implementation quoted separately from $3,500.</p>
-
+          <ul>
+            <li><strong>Stage A, Readiness Review:</strong> an independent, document-based review of one phase or work package</li>
+            <li><strong>Deliverables:</strong> Field-Level Insight Report, Five Priority Execution Risks ranked by potential impact, Site-Specific Action Plan, and one findings-review meeting</li>
+            <li><strong>Stage B implementation,</strong> optional, quoted separately from $3,500</li>
+          </ul>
         </div>
         <div class="card">
           <h3>Ongoing Support</h3>
@@ -232,18 +239,20 @@
       </div>
     </section>
 
-    <section>
+    <section class="band">
       <h2>Credit for Continuing Work</h2>
       <h3 class="sub">How the credit works</h3>
       <p class="lede">When an assessment leads into related work, you should not have to pay twice for the same assessment. If you agree in writing to the next engagement within 30 calendar days after we issue the written proposal for that next engagement, we apply a credit against the next fee, subject to the conditions below. The credit is up to 50% of the fee you paid, and never more than 50% of the next engagement's fee. The credit applies to the same site, construction phase, or work package, to one engagement only, and is confirmed in your written proposal.</p>
       <p class="lede">One credit per new engagement. Credits cannot be combined, transferred, redeemed for cash, or carried forward. The original service must be completed and paid in full. All figures are CAD before HST.</p>
-      <h3 class="sub">Examples</h3>
+      <details class="scope">
+        <summary>Examples</summary>
       <ul class="notes">
         <li><strong>Site Performance Audit to Project Readiness Review:</strong> $2,500 audit to $3,500 review, credit $1,250, payable $2,250.</li>
         <li><strong>Project Readiness Review to Implementation:</strong> $3,500 review to $5,000 implementation, credit $1,750, payable $3,250.</li>
         <li><strong>Project Readiness Review to Implementation:</strong> $5,000 complex review to a $3,500 implementation, credit $1,750, payable $1,750.</li>
         <li><strong>Audit or Review to Ongoing Support:</strong> credit toward the first month's $1,500 retainer only, at most $750 under the 50% cap, no roll into month two.</li>
       </ul>
+      </details>
     </section>
 
     <section class="flagship">
@@ -257,7 +266,7 @@
     <section>
       <h2>Sample deliverables</h2>
       <p class="lede">Proof of what an audit produces. These are the two documents every Site Performance Audit ends with, shown as samples so you can judge the work before you buy it. Both samples use fictional project data. Each document stands alone.</p>
-      <div class="cards">
+      <div class="cards soft">
         <div class="card">
           <h3>Field-Level Insight Report</h3>
           <p class="best">The diagnosis: what is working, what is broken, and what needs attention, with the production numbers and findings to back it up.</p>
@@ -280,10 +289,10 @@
       </div>
     </section>
 
-    <section>
+    <section class="band">
       <h2>Field training and leadership development</h2>
       <p class="lede">Standalone training modules, built for your crew and your procedures. The three decks below are example modules, free to look through. Pick one, combine several into a program, or have one built for your team.</p>
-      <div class="cards">
+      <div class="cards soft">
         <div class="card">
           <h3>Contracting 101: Field Training</h3>
           <p class="best">What every foreman should know about contracts, changes, quality, and field records.</p>
