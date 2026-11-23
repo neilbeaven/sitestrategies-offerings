@@ -39,9 +39,6 @@
   section{padding:32px 0}
   h2{font-size:clamp(24px,4vw,34px);margin:0 0 12px}
   .lede{color:var(--muted);font-size:17px;line-height:1.6;max-width:760px;margin:0 0 24px}
-  .creds{list-style:none;padding:0;margin:0 0 24px;color:var(--muted);font-size:17px;line-height:1.6;max-width:760px}
-  .creds li{margin:0 0 10px}
-  .creds li strong{color:var(--ink)}
   h3.sub{font-size:20px;margin:24px 0 8px}
   .detail-2col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
   .table-scroll{overflow-x:auto}
@@ -77,6 +74,16 @@
   details.scope{margin-top:16px;border-top:1px solid var(--stroke);padding-top:12px}
   details.scope summary{cursor:pointer;font-weight:700;color:var(--ink)}
   details.scope ul{margin-top:12px}
+  @media (max-width:640px){
+    .table-scroll{overflow-x:visible}
+    .price-table{display:block;background:transparent;border:none;overflow:visible}
+    .price-table tr:first-child{display:none}
+    .price-table tbody{display:block}
+    .price-table tr{display:block;background:var(--panel);border:1px solid var(--stroke);border-radius:14px;margin:0 0 16px;padding:6px 0}
+    .price-table tr:last-child{margin-bottom:0}
+    .price-table td{display:block;border-bottom:none;padding:8px 18px}
+    .price-table td::before{content:attr(data-label);display:block;font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+  }
   .cta h2{margin-bottom:12px}
   .cta p{color:var(--muted);font-size:17px;line-height:1.6;max-width:640px;margin:0 auto 24px}
   footer{border-top:1px solid var(--stroke);padding:24px 0 40px;color:var(--muted);line-height:1.7}
@@ -97,14 +104,6 @@
         <a class="btn secondary" href="mailto:info@sitestrategies.ca?subject=Straight-Talk%20Call%20request">Email to book a call</a>
       </div>
     </div>
-
-    <p class="lede">Led by Neil Beaven, Principal of Site Strategies, with 20 years in heavy civil, transit, and major infrastructure construction.</p>
-    <ul class="creds">
-      <li><strong>Superintendent, Green Infrastructure Partners</strong> — City of Toronto Jane and Wilson Basement Flooding Protection Program, where I led a field team of 60+ people; Waterfront Toronto Portlands Flood Protection Program, Work Package 9; Eglinton Crosstown West Extension.</li>
-      <li><strong>Field Engineer, EllisDon</strong> — TTC York University Subway Station.</li>
-      <li><strong>Lead Superintendent, Investigations, ONxpress</strong> — ON-Corr Rail Expansion Program.</li>
-    </ul>
-
 
     <section>
       <h2>How we work</h2>
@@ -132,11 +131,11 @@
       <div class="table-scroll">
       <table class="price-table">
         <tr><th>Level</th><th>What you get</th><th>Time</th><th>Price</th></tr>
-        <tr><td><strong>Level 1: Site Performance Audit</strong></td><td>One day on site, written report and action plan</td><td>48-72 hours, on site</td><td><strong>$2,500 flat</strong></td></tr>
-        <tr><td><strong>Level 2 Stage A: Readiness Review</strong></td><td>Review of one phase or work package, Five Priority Execution Risks and action plan</td><td>5 business days, documents</td><td><strong>$3,500 standard / $5,000 complex, fixed once scope is confirmed</strong></td></tr>
-        <tr><td><strong>Level 2 Stage B: Implementation</strong></td><td>Optional help putting agreed recommendations into action</td><td>Quoted separately</td><td><strong>From $3,500</strong></td></tr>
-        <tr><td><strong>Level 3: Ongoing Support</strong></td><td>Regular advisory support and site check-ins</td><td>Monthly</td><td><strong>$1,500 per month, fixed</strong></td></tr>
-        <tr><td><strong>Level 4: Embedded Site Leadership</strong></td><td>Experienced field leadership on site</td><td>Daily</td><td><strong>$1,500 per day, fixed</strong></td></tr>
+        <tr><td data-label="Level"><strong>Level 1: Site Performance Audit</strong></td><td data-label="What you get">One day on site, written report and action plan</td><td data-label="Time">48-72 hours, on site</td><td data-label="Price"><strong>$2,500 flat</strong></td></tr>
+        <tr><td data-label="Level"><strong>Level 2 Stage A: Readiness Review</strong></td><td data-label="What you get">Review of one phase or work package, Five Priority Execution Risks and action plan</td><td data-label="Time">5 business days, documents</td><td data-label="Price"><strong>$3,500 standard / $5,000 complex, fixed once scope is confirmed</strong></td></tr>
+        <tr><td data-label="Level"><strong>Level 2 Stage B: Implementation</strong></td><td data-label="What you get">Optional help putting agreed recommendations into action</td><td data-label="Time">Quoted separately</td><td data-label="Price"><strong>From $3,500</strong></td></tr>
+        <tr><td data-label="Level"><strong>Level 3: Ongoing Support</strong></td><td data-label="What you get">Regular advisory support and site check-ins</td><td data-label="Time">Monthly</td><td data-label="Price"><strong>$1,500 per month, fixed</strong></td></tr>
+        <tr><td data-label="Level"><strong>Level 4: Embedded Site Leadership</strong></td><td data-label="What you get">Experienced field leadership on site</td><td data-label="Time">Daily</td><td data-label="Price"><strong>$1,500 per day, fixed</strong></td></tr>
       </table>
       </div>
       <p class="lede">All prices are CAD plus HST. Scope, exclusions, timing, and price are confirmed in writing before work begins. You know the price before work starts.</p>
